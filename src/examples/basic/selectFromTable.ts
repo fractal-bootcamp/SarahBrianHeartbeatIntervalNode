@@ -138,7 +138,7 @@ export const table_custom: IntervalActionHandler = async io => {
 
   const rows: { [key: string]: any }[] = []
   for (let i = 0; i < rowsCount; i++) {
-    const row: typeof rows[0] = {}
+    const row: (typeof rows)[0] = {}
     for (const field of fields) {
       switch (field.value) {
         case 'id':
@@ -199,7 +199,7 @@ export const table_custom: IntervalActionHandler = async io => {
 }
 
 export const table_custom_columns: IntervalActionHandler = async io => {
-  type Charge = typeof charges[0]
+  type Charge = (typeof charges)[0]
   const selections = await io.select
     .table('Select from this table', {
       data: [
