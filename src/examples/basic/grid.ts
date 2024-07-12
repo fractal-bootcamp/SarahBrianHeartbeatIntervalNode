@@ -2,6 +2,37 @@ import { IntervalActionHandler, io, Action } from '../..'
 import { faker } from '@faker-js/faker'
 import { sleep } from '../utils/helpers'
 
+export const Mayhooligans = new Action({
+  name: 'Mayhooligans',
+  handler: async io => {
+    await io.display.table('Example Table', {
+      columns: [
+        {
+          label: 'Name',
+          renderCell: cell => ({
+            label: cell.name,
+            textColor: 'red',
+          }),
+        },
+        {
+          label: 'Age',
+          renderCell: cell => ({
+            label: cell.age,
+          }),
+        },
+      ],
+      data: [
+        {
+          name: 'Mayhul',
+          age: 24,
+        },
+        { name: 'Nick', age: 25 },
+        { name: 'Joseph', age: 30 },
+      ],
+    })
+  },
+})
+
 export const dogs = new Action({
   name: 'Dogs',
   handler: async () => {
