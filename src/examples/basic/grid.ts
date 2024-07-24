@@ -11,7 +11,7 @@ export const Mayhooligans = new Action({
           label: 'Name',
           renderCell: cell => ({
             label: cell.name,
-            onExpand: { pet: cell.pet, children: cell.children },
+            expandableData: { pet: cell.pet, children: cell.children },
           }),
         },
         {
