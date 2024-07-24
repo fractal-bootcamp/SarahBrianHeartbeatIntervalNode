@@ -2,7 +2,7 @@ import { IntervalActionHandler, io, Action } from '../..'
 import { faker } from '@faker-js/faker'
 import { sleep } from '../utils/helpers'
 
-export const Mayhooligans = new Action({
+export const Expandables = new Action({
   name: 'The Expandables',
   handler: async io => {
     await io.display.table('Example Table', {
