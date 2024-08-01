@@ -2,8 +2,8 @@ import { IntervalActionHandler, io, Action } from '../..'
 import { faker } from '@faker-js/faker'
 import { sleep } from '../utils/helpers'
 
-export const Mayhooligans = new Action({
-  name: 'Mayhooligans',
+export const Expandables = new Action({
+  name: 'The Expandables',
   handler: async io => {
     await io.display.table('Example Table', {
       columns: [
@@ -11,7 +11,7 @@ export const Mayhooligans = new Action({
           label: 'Name',
           renderCell: cell => ({
             label: cell.name,
-            textColor: 'red',
+            expandableData: { pet: cell.pet, children: cell.children },
           }),
         },
         {
@@ -23,11 +23,23 @@ export const Mayhooligans = new Action({
       ],
       data: [
         {
-          name: 'Mayhul',
+          name: 'Sylvester',
           age: 24,
+          children: 2,
+          pet: 'dog',
         },
-        { name: 'Nick', age: 25 },
-        { name: 'Joseph', age: 30 },
+        {
+          name: 'Jason',
+          age: 25,
+          children: 1,
+          pet: 'cat',
+        },
+        {
+          name: 'Dolph',
+          age: 30,
+          children: 3,
+          pet: 'parrot',
+        },
       ],
     })
   },
